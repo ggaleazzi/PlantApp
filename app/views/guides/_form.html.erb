@@ -1,0 +1,53 @@
+<% if @guide.errors.any? %>
+ <div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+   <div class="panel panel-danger">
+    <div class="panel-heading">
+     <h2 class="panel-title">
+      <%= pluralize(@guide.errors.count, "error") %>
+      Failed:
+     </h2>
+     <div class="panel-body">
+      <ul>
+       <% @guide.errors.full_messages.each do |msg|%>
+        <li><%= msg %></li>
+       <% end %>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+<% end %>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <%= form_for(@guide, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+        
+        <div class="form-group">
+            <div class="control-label col-sm-2">
+                <%= f.label :plantname %>
+            </div>
+            <div class="col-sm-6">
+                <%= f.text_field :plantname, class: "form-control", placeholder: "Title of guide", autofocus: true %>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-sm-2">
+                <%= f.label :description %>
+            </div>
+            <div class="col-sm-6">
+                <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Body of guide" %>
+            </div>
+        </div> 
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <%= f.submit class: 'btn btn-primary btn-large' %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+    
+    

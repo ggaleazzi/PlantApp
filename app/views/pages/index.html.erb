@@ -1,0 +1,40 @@
+<h1>Welcome to The Urban Farmer App</h1>
+<%= link_to 'About', about_path %>
+<%= link_to 'Home', root_path %>
+
+<h1 align="center">Guides</h1>
+<p>
+<%= link_to "Create New", new_guide_path %>
+
+<% @guides.each do |guide| %>
+ <div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+   <div class="well well-lg">
+    <div class="guide-plantname">
+     <%= link_to guide.plantname, guide_path(guide) %>
+    </div>
+    <div class="guide-body">
+     <%= truncate(guide.description, length: 100) %>
+    </div>
+    </div>
+  </div>
+ </div>
+<% end %>
+
+
+
+<%# <table>
+    <tr>
+        <th>Plant Name</th>
+        <th>Description</th>
+    </tr>
+        <% @guides.each do |guide| %>
+    <%# <tr>
+        <td><%= guide.plantname %></td>
+        <%# <td><%= guide.description %></td>
+        <%# <td><%= link_to 'Edit', edit_guide_path(guide) %></td>
+        <%# <td><%= link_to 'Show', guide_path(guide) %></td>
+    <%# </tr>
+    <% end %>
+<%# </table> %> 
+
