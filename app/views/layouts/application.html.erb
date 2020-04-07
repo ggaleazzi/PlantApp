@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
+    <script src="https://kit.fontawesome.com/d088a14a50.js" crossorigin="anonymous"></script>
     <title>PlantApp2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script type="text/javascript" src="assets/javascripts/application.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    
     <%= render 'layouts/navigation' %>
     <% flash.each do |name, msg| %>
     <ul>
